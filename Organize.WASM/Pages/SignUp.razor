@@ -1,0 +1,49 @@
+﻿@page "/signup"
+@inherits SignUpBase
+@layout UnAuthLayout
+<div class="sign-form">
+    <EditForm EditContext="@EditContext" OnValidSubmit="OnValidSubmit">
+        <DataAnnotationsValidator />
+
+        <div class="sign-validation">
+            <ValidationInput @bind-Value="objUser.UserName"
+                             placeholder="Username"
+                             Error=@GetError(() => objUser.UserName) />
+        </div>
+
+        <div class="sign-validation">
+            <ValidationInput @bind-Value="objUser.Password"
+                             placeholder="Password"
+                             type="password"
+                             Error=@GetError(() => objUser.Password) />
+        </div>
+
+        <div class="sign-validation">
+            <ValidationInput @bind-Value="objUser.FirstName"
+                             placeholder="First name"
+                             Error=@GetError(() => objUser.FirstName) />
+        </div>
+
+        <div class="sign-validation">
+            <ValidationInput @bind-Value="objUser.LastName"
+                             placeholder="Last name"
+                             Error=@GetError(() => objUser.LastName) />
+        </div>
+
+        <div class="sign-validation">
+            <ValidationInput @bind-Value="objUser.PhoneNumber"
+                             placeholder="Phone number"
+                             Error=@GetError(() => objUser.PhoneNumber) />
+        </div>
+
+        <div class="sign-validation">
+            <Dropdown TValue="OrganizeDotNET6a.Shared.Enums.GenderTypeEnum"
+                      @bind-SelectedItem="@SelectedGenderTypeDropDownItem"
+                      SelectableItems="@GenderTypeDropDownItems">
+
+            </Dropdown>
+        </div>
+
+        <button class="sign-button btn btn-primary" type="submit">Sign up</button>
+    </EditForm>
+</div>

@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+	<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="OrganizeAuthenticationStateProvider\WebAPIAuthenticationStateProvider.cs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="OrganizeAuthenticationStateProvider\WebAPIAuthenticationStateProvider.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<_ContentIncludedByDefault Remove="wwwroot\css\components\itemsOverview.css" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="compilerconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
+    <PackageReference Include="Blazored.Modal" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.9" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.23.1" />
+
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\GeneralUi\GeneralUi.csproj" />
+	  <ProjectReference Include="..\Organize.Business\Organize.Business.csproj" />
+	  <ProjectReference Include="..\Organize.DataAccess\Organize.Persistence_DataAccess.csproj" />
+	  <!--<ProjectReference Include="..\Organize.IndexedDB\Organize.IndexedDB.csproj" />-->
+	  <ProjectReference Include="..\Organize.InMemoryStorage\Organize.Persistence_InMemoryStorage.csproj" />
+	  <ProjectReference Include="..\Organize.Shared\Organize.Shared.csproj" />
+	  <!--<ProjectReference Include="..\Organize.TestFake\Organize.Business_TestFake.csproj" />-->
+	  <!--<ProjectReference Include="..\Organize.WebAPIAccess\Organize.Persistence_WebAPIAccess.csproj" />-->
+	</ItemGroup>
+
+</Project>
